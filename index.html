@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.0/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>JS - PreEntrega 3 - Juan Ignacio Armas</title>
+</head>
+<body>
+    <header>
+        <h1>Prestamos hipotecarios</h1>
+    </header>
+    <main>
+        <section id="create" class="container">
+            <h2>Simulador</h2>
+            <form action="" id="add-simulation">
+                <label id="label" for="value">Valor vivienda a adquirir:</label>
+                <input id="value" type="text" name="value" required placeholder="0" oninput="formatNumber(this)">
+                <label id="label" for="amount">Monto a solicitar:</label>
+                <input id="amount" type="text" name="amount" required placeholder="Maximo 75%" oninput="formatNumber(this)">
+                <label for="deadline">Plazo:</label>
+                <input id="deadline" type="number" name="deadline" required placeholder="1 - 30">
+                <label for="client">Cobra en el Banco:</label>
+                <select name="client" id="client">
+                    <option value="4,5">Si</option>
+                    <option value="6">No</option>
+                 </select>
+                <button id="btn" type="submit">Calcular</button>
+            </form>
+        </section>
+        <section class="container">
+            <h2 class="title">Prestamos simulados:</h2>
+            <div id="SimDiv">
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark">
+        <p>Prestamos bancarios S.A.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.0/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>

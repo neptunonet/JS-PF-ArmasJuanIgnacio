@@ -1,0 +1,172 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Variables */
+:root {
+    /* Paleta */
+    --dark: #1e1f20;
+    --light: #ffffff;
+    --primary: #3f6bac;
+    --accent: #6483a0;
+    /* Font Sizes */
+    --text-title: 4.2em;
+    --text-subtitle: 3.6em;
+    --text-heading: 3.0em;
+    --text-link: 2.2em;
+    --text-base: 1.6em;
+    --text-caption: 1.4em;
+    /* Spacings */
+    --spacing-xl: 12rem;
+    --spacing-lg: 8.4rem;
+    --spacing-md: 5.2rem;
+    --spacing-sm: 3.6rem;
+    --spacing-xs: 2.0rem;
+}
+
+/* Normalizado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    color: var(--dark);
+    font-family: 'Lato', sans-serif;
+}
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+p {
+    font-size: var(--text-base);
+}
+.bg-custom {
+    background-color: var(--primary);
+}
+.bg-dark {
+    background-color: var(--dark);
+}
+.container {
+    display: grid;
+    place-items: center;
+    padding: var(--spacing-xs);
+    margin: auto;
+   
+}
+
+/* header */
+header {
+    display: grid;
+    place-items: center;
+    padding: var(--spacing-sm);
+}
+header h1 {
+    font-size: var(--text-subtitle);
+}
+/* main section */
+main {
+    margin: var(--spacing-xs) 0 var(--spacing-md);
+}
+
+
+/* Form */
+#create {
+    display: flex;
+    border-bottom: 3px solid var(--primary);
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    margin: var(--spacing-sm) 
+}
+#create h2 {
+    font-size: var(--text-heading);
+}
+#create form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+#create form label{
+    font-size: var(--text-link);
+}
+#create form :is(input, select)  {
+    padding: var(--spacing-xs);
+    font-size: var(--text-base);
+}
+#btn {
+    padding: var(--spacing-xs);
+    background-color: var(--primary);
+    color: var(--light);
+    font-size: var(--text-link);
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-delete {
+    padding: 12px;
+    background-color: var(--primary);
+    color: var(--light);
+    font-size: var(--text-link);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.title {
+    font-size: var(--text-heading);
+    text-align: center;
+    margin: var(--spacing-md) 0;
+}
+
+#sims {
+    margin-top: 30px;
+    min-height: 40vh;
+}
+#sims h2 {
+    font-size: 42px;
+    text-align: center;
+}
+.sim {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs);
+    margin: var(--spacing-xs);
+    border-bottom: 3px solid var(--primary);
+}
+.sim p{
+    font-size: var(--text-link);
+}
+.sim h3{
+    font-size: var(--text-heading);
+
+}
+
+
+/* footer */
+footer {
+    display: grid;
+    place-items: center;
+    padding: var(--spacing-xs);
+}
+footer p {
+    font-size: var(--text-link);
+    color: var(--light);
+}
+
+
+/*  Toastify */
+.toastify {
+    font-size: 1.6em;
+}
+
+/* Animations */
+.deleted-sim {
+    background-color: rgb(209, 8, 48);
+    color: white;
+    width: 500px;
+    padding: 1.4rem;
+}
