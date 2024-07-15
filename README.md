@@ -26,6 +26,7 @@
 
 **Se debe entregar**
 
+- Objetos y Arrays. Métodos de Arrays.
 - Funciones y condicionales.
 - Generación del DOM de forma dinámica. Eventos.
 - Sintaxis avanzada.
