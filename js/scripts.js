@@ -9,6 +9,7 @@
 
 const sim_form = document.querySelector('#add-simulation');
 const simDiv = document.querySelector('#SimDiv');
+const simCot = document.querySelector('#SimCot');
 
 
 //Formatear números
@@ -41,6 +42,42 @@ function validateFields() {
     
   }
 }
+
+async function fetchCurrencyData() {
+  const response = await fetch("https://dolarapi.com/v1/dolares/blue");
+  const data = await response.json();
+  console.log(data);
+
+  simCot.innerHTML = "";
+
+  const cot_container = document.createElement('article');
+    cot_container.className = 'cot';
+    cot_container.casa = `cot-${data.casa}`;
+
+    cot_container.innerHTML = `
+     <div>
+        <p>Cotizacion: ${data.nombre}</p>
+        <p>Compra: $${data.compra}</p>
+        <p>Venta: $${data.venta}</p>
+      </div>
+    `;
+
+    simCot.appendChild(cot_container);
+
+}
+
+fetchCurrencyData()
+   
+/*    {
+      "moneda": "USD",
+      "casa": "oficial",
+      "nombre": "Oficial",
+      "compra": 900.5,
+      "venta": 940.5,
+      "fechaActualizacion": "2024-07-15T09:45:00.000Z"
+    },
+*/
+
 
 
 // crear Simulacion 

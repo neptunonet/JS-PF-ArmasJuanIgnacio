@@ -39,9 +39,11 @@ body {
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
+
 p {
     font-size: var(--text-base);
 }
+
 .bg-custom {
     background-color: var(--primary);
 }
@@ -58,13 +60,25 @@ p {
 
 /* header */
 header {
-    display: grid;
-    place-items: center;
-    padding: var(--spacing-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    color: var(--light);
+    padding: var(--spacing-xs);
 }
 header h1 {
     font-size: var(--text-subtitle);
 }
+
+.header {
+    padding: var(--spacing-xs);
+    background-color: var(--primary);
+    color: var(--light);
+    font-weight: bold;
+}
+
+
 /* main section */
 main {
     margin: var(--spacing-xs) 0 var(--spacing-md);
@@ -74,16 +88,18 @@ main {
 /* Form */
 #create {
     display: flex;
-    border-bottom: 3px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-sm);
     margin: var(--spacing-sm) 
 }
+
 #create h2 {
     font-size: var(--text-heading);
 }
+
 #create form {
     width: 40%;
     display: flex;
@@ -115,19 +131,17 @@ main {
 }
 
 .title {
-    font-size: var(--text-heading);
     text-align: center;
     margin: var(--spacing-md) 0;
+    font-size: var(--text-heading);
 }
 
 #sims {
     margin-top: 30px;
     min-height: 40vh;
 }
-#sims h2 {
-    font-size: 42px;
-    text-align: center;
-}
+
+
 .sim {
     display: flex;
     justify-content: space-between;
@@ -140,23 +154,23 @@ main {
 .sim p{
     font-size: var(--text-link);
 }
-.sim h3{
+.sim h3 {
     font-size: var(--text-heading);
-
 }
-
 
 /* footer */
 footer {
-    display: grid;
-    place-items: center;
-    padding: var(--spacing-xs);
-}
-footer p {
-    font-size: var(--text-link);
+    background-color: var(--primary);
     color: var(--light);
+    padding: var(--spacing-xs);
+    text-align: center;
+    font-size: var(--text-caption);
 }
 
+a  {
+    color: var(--light);
+    text-decoration: none;
+}
 
 /*  Toastify */
 .toastify {
