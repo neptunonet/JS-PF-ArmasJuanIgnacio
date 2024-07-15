@@ -1,16 +1,14 @@
 /**
- * 3 er Pre entrega de Proyecto Final
+ * Proyecto Final
  * 
  * Comision 71340
  * 
  * Juan Ignacio Armas
  */
 
-
 const sim_form = document.querySelector('#add-simulation');
 const simDiv = document.querySelector('#SimDiv');
 const simCot = document.querySelector('#SimCot');
-
 
 //Formatear números
 function formatNumber(input) {
@@ -43,6 +41,7 @@ function validateFields() {
   }
 }
 
+//Cotizacion Dolar
 async function fetchCurrencyData() {
   const response = await fetch("https://dolarapi.com/v1/dolares/blue");
   const data = await response.json();
@@ -66,22 +65,9 @@ async function fetchCurrencyData() {
 
 }
 
-fetchCurrencyData()
+
    
-/*    {
-      "moneda": "USD",
-      "casa": "oficial",
-      "nombre": "Oficial",
-      "compra": 900.5,
-      "venta": 940.5,
-      "fechaActualizacion": "2024-07-15T09:45:00.000Z"
-    },
-*/
-
-
-
-// crear Simulacion 
-
+//Crea Simulacion
 function createSim({value, amount, deadline,client}) {
   const sims = JSON.parse(localStorage.getItem('sims'));
 
@@ -100,8 +86,7 @@ function createSim({value, amount, deadline,client}) {
   appendSimDiv();
 }
 
-// eliminarTarea
-
+//Elimina Tarea
 function deleteSim(id) {
   const sims = JSON.parse(localStorage.getItem('sims'));
   const newSim = sims.filter(sim => sim.id != id);
@@ -110,8 +95,7 @@ function deleteSim(id) {
   appendSimDiv();
 };
 
-// actualizarTarea
-
+//Actualiza Tarea
 function updateSim(id, data) {
   const sims = JSON.parse(localStorage.getItem('sims'));
   const newSim = sims.map(sim => sim.id == id && sim.status == data.status);
@@ -120,9 +104,7 @@ function updateSim(id, data) {
   appendSimDiv();
 }
 
-
-// actualizar En Dom
-
+//Actualiza en Dom
 function appendSimDiv() {
 
   let sims = [];
@@ -134,7 +116,7 @@ function appendSimDiv() {
   }
 
   simDiv.innerHTML = "";
-
+  
   sims.forEach(sim => {
     const sim_container = document.createElement('article');
     sim_container.className = 'sim';
@@ -176,15 +158,15 @@ function appendSimDiv() {
   });
 }
 
+//Carga inicial
 
-//Recargar simulaciones
+//Carga de cotizacion
+fetchCurrencyData();
 
+//Carga simulaciones
 appendSimDiv();
 
-
-
 // Eventos
-
 sim_form.addEventListener('submit', (e) => {
   
   e.preventDefault();
@@ -214,4 +196,3 @@ sim_form.addEventListener('submit', (e) => {
     sim_form.reset();
   }
 });
-

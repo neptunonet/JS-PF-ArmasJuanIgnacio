@@ -20,7 +20,7 @@
     --spacing-lg: 8.4rem;
     --spacing-md: 5.2rem;
     --spacing-sm: 3.6rem;
-    --spacing-xs: 2.0rem;
+    --spacing-xs: 1.6rem;
 }
 
 /* Normalizado */
@@ -40,23 +40,20 @@ body {
     min-height: 100vh;
 }
 
-p {
-    font-size: var(--text-base);
-}
 
-.bg-custom {
-    background-color: var(--primary);
-}
-.bg-dark {
-    background-color: var(--dark);
-}
+/* Container */
 .container {
     display: grid;
     place-items: center;
     padding: var(--spacing-xs);
-    margin: auto;
-   
+    margin: auto;   
 }
+
+/* Global */
+p {
+    font-size: var(--text-base);
+}
+
 
 /* header */
 header {
@@ -68,7 +65,7 @@ header {
     padding: var(--spacing-xs);
 }
 header h1 {
-    font-size: var(--text-subtitle);
+    font-size: var(--text-heading);
 }
 
 .header {
@@ -96,16 +93,13 @@ main {
     margin: var(--spacing-sm) 
 }
 
-#create h2 {
-    font-size: var(--text-heading);
-}
-
 #create form {
     width: 40%;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
 }
+
 #create form label{
     font-size: var(--text-link);
 }
@@ -113,6 +107,7 @@ main {
     padding: var(--spacing-xs);
     font-size: var(--text-base);
 }
+
 #btn {
     padding: var(--spacing-xs);
     background-color: var(--primary);
@@ -121,6 +116,7 @@ main {
     font-weight: bold;
     cursor: pointer;
 }
+
 .btn-delete {
     padding: 12px;
     background-color: var(--primary);
@@ -141,7 +137,6 @@ main {
     min-height: 40vh;
 }
 
-
 .sim {
     display: flex;
     justify-content: space-between;
@@ -149,7 +144,7 @@ main {
     gap: var(--spacing-xs);
     padding: var(--spacing-xs);
     margin: var(--spacing-xs);
-    border-bottom: 3px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
 }
 .sim p{
     font-size: var(--text-link);
