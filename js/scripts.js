@@ -6,11 +6,12 @@
  * Juan Ignacio Armas
  */
 
+//Variables
 const sim_form = document.querySelector('#add-simulation');
 const simDiv = document.querySelector('#SimDiv');
 const simCot = document.querySelector('#SimCot');
 
-//Formatear números
+//Formatea números
 function formatNumber(input) {
   // Extraer el valor actual del campo y remover separadores de miles
   let value = input.value.replace(/\D/g, '');
@@ -23,7 +24,7 @@ function formatNumber(input) {
 }
 
 
-//valida carga de Formulario
+//Valida carga de Formulario
 function validateFields() {
   const value = document.querySelector('#value').value;
   const amount = document.querySelector('#amount').value;
@@ -65,8 +66,6 @@ async function fetchCurrencyData() {
 
 }
 
-
-   
 //Crea Simulacion
 function createSim({value, amount, deadline,client}) {
   const sims = JSON.parse(localStorage.getItem('sims'));
